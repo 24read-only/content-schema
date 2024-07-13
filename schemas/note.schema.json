@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id", "name", "description", "image", "perfumes"],
+    "properties": {
+        "id": { "type": "string", "title": "Uuid" },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "image": {
+            "type": "string"
+        },
+        "perfumes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "PerfumePath"
+            }
+        }
+    },
+    "additionalProperties": false
+}

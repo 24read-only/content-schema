@@ -1,0 +1,114 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id", "title", "brand", "description", "components", "options"],
+    "properties": {
+        "id": { "type": "string", "title": "Uuid" },
+        "title": {
+            "type": "string"
+        },
+        "brand": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "components": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "title": "NotePath"
+            }
+        },
+        "category": {
+            "type": "string",
+            "oneOf": [
+                {
+                    "const": "perfume"
+                }
+            ]
+        },
+        "options": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    { "$ref": "#/option/fullsize" },
+                    { "$ref": "#/option/minuature" },
+                    { "$ref": "#/option/sample" }
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "option": {
+        "fullsize": {
+            "required": ["id", "type", "text", "image", "price"],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/cuid"
+                },
+                "type": {
+                    "const": "fullsize"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "minuature": {
+            "required": ["id", "type", "text", "image", "price"],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/cuid"
+                },
+                "type": {
+                    "const": "minuature"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "sample": {
+            "required": ["id", "type", "text", "image", "price"],
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/cuid"
+                },
+                "type": {
+                    "const": "sample"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "cuid": {
+            "type": "string",
+            "title": "cuid"
+        }
+    }
+}

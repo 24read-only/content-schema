@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../../schemas/product.schema.json
+id: '{cuid}'
+title: 'Ganymede'
+brand: 'MAB'
+category: perfume
+description: |
+    desc desc deesc
+    desc
+components:
+    - '1'
+    - '2'
+options:
+    - id: '1'
+      type: fullsize
+      text: 'Флакон 100 мл'
+      image: 'link'
+      price: 10000

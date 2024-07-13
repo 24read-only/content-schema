@@ -1,0 +1,3 @@
+# yaml-language-server: $schema=../schemas/manifest.schema.json
+products:
+    - 'test-product-1'
